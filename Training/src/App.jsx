@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 function Changed() {
@@ -12,18 +12,15 @@ function App() {
     setIsClicked(!isClicked);
   };
 
-
-  let content;
-  if(isClicked) {
-    content = <button onClick={handleClick}>Click here to change adgili BLEADDD</button>
-  } else{
-    content = <Changed/>
-  } 
-
-
   return (
     <>
-      <div>{content}</div>
+      <div>
+        {isClicked ? (
+          <Changed />
+        ) : (
+          <button onClick={handleClick}>Click to Change</button>
+        )}
+      </div>
     </>
   );
 }
