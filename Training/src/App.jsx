@@ -1,22 +1,31 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
-const Luka = {
-  name: 'Luka',
-  age: 21,
-  favouriteCar: "PorsChe 911 GT3 RS"
+function Changed() {
+  return <h1>This is Changed, good job lion</h1>;
 }
 
 function App() {
+  const [isClicked, setIsClicked] = useState(true);
+
+  const handleClick = () => {
+    setIsClicked(!isClicked);
+  };
+
+
+  let content;
+  if(isClicked) {
+    content = <button onClick={handleClick}>Click here to change adgili BLEADDD</button>
+  } else{
+    content = <Changed/>
+  } 
 
 
   return (
     <>
-      <div>
-      <h1>My favourite car is: {Luka.favouriteCar}</h1>
-     </div>   
+      <div>{content}</div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
